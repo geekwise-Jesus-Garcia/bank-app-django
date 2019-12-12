@@ -37,7 +37,7 @@ class Product(models.Model):
         ('cd', 'CD'),
     )
 
-    product_option = models.CharField(max_length=100)
+    option = models.CharField(max_length=100)
 
 
     def _str_(self):

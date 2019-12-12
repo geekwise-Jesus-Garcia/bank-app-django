@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
+from .models import Bank, Account, Customer, Product
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -13,12 +14,25 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         model = Group
         fields = ['url', 'name']
 
-class Bankserializer(serializers.HyperlinkedModelSerializer):
+class BankSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         models = Bank
-        fields = ['bank_name', ]
+        fields = ['bank_name' ]
 
-class Accountserializer(serializers.HyperlinkedModelSerializer):
+class AccountSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         models = Account
-        fields = []
+        fields = ['account_options', 'username', 'email', 'options']
+
+
+class CustomerSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        models = Customer
+        fields = ['customer_name']
+
+class ProductSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        models = Product
+        fields = ['product_option', 'option']
+
+
