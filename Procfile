@@ -1,1 +1,1 @@
-web: cd drf && python manage.py migrate && gunicorn app.wsgi
+web: cd app && python manage.py migrate && gunicorn main.wsgi
