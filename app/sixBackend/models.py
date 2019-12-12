@@ -7,6 +7,8 @@ class Bank(models.Model):
     def _str_(self):
         return(f" Bank {self.location_name}")
 
+
+
 class Account(models.Model):
     account_options = (
         ('account', 'ACCOUNT'),
@@ -20,3 +22,23 @@ class Account(models.Model):
 
     def _str_(self):
         return(f"Account Name {self.product_username} Account Email {self.product_email}")
+
+class Customer(models.Model):
+    customer_name = models.CharField(max_length=100)
+
+    def _str_(self):
+        return(f"Customer Name {self.customer_name}")
+
+
+class Product(models.Model):
+    product_option = (
+        ('loan', 'LOAN'),
+        ('credit', 'CREDIT'),
+        ('cd', 'CD'),
+    )
+
+    product_option = models.CharField(max_length=100)
+
+
+    def _str_(self):
+        return(f"Type {self.product_option}")
