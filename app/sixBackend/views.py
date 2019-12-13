@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User, Group
+from .models import Bank, Account, Customer, Product
 from rest_framework import viewsets
-from .serializers import UserSerializer, GroupSerializer
+from .serializers import UserSerializer, GroupSerializer, BankSerializer, AccountSerializer, CustomerSerializer, ProductSerializer
 
 # Create your views here.
 
